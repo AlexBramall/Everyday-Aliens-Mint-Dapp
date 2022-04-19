@@ -67,7 +67,7 @@ export const ResponsiveWrapper = styled.div`
 export const StyledLogo = styled.img`
   width: 20rem;
   @media (min-width: 767px) {
-    width: 400px;
+    width: 20rem;
   }
   transition: width 0.5s;
   transition: height 0.5s;
