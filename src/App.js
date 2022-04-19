@@ -197,14 +197,20 @@ function App() {
       <s.Container
         flex={1}
         ai={"center"}
-        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
+        //image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
       >
         <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={"/config/images/example.gif"} />
+            <StyledImg
+              alt={"example"}
+              src={"/config/images/example.gif"}
+              style={{
+                boxShadow: "-8px 8px 0 black",
+              }}
+            />
           </s.Container>
           <s.SpacerLarge />
           <s.Container
@@ -212,11 +218,11 @@ function App() {
             jc={"center"}
             ai={"center"}
             style={{
-              backgroundColor: "var(--accent)",
+              backgroundColor: "var(--container-color)",
               padding: 24,
               borderRadius: 8,
               border: "4px  var(--secondary)",
-              boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
+              boxShadow: "-8px 8px 0 black ",
             }}
           >
             <s.TextTitle
@@ -224,7 +230,7 @@ function App() {
                 textAlign: "center",
                 fontSize: 50,
                 fontWeight: "bold",
-                color: "var(--accent-text)",
+                color: "var(--primary-text)",
               }}
             >
               {data.totalSupply} / {CONFIG.MAX_SUPPLY}
@@ -243,12 +249,12 @@ function App() {
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
               <>
                 <s.TextTitle
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  style={{ textAlign: "center", color: "var(--primary-text)" }}
                 >
                   The sale has ended.
                 </s.TextTitle>
                 <s.TextDescription
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  style={{ textAlign: "center", color: "var(--primary-text)" }}
                 >
                   You can still find {CONFIG.NFT_NAME} on
                 </s.TextDescription>
@@ -260,14 +266,14 @@ function App() {
             ) : (
               <>
                 <s.TextTitle
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  style={{ textAlign: "center", color: "var(--primary-text)" }}
                 >
                   1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
                   {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  style={{ textAlign: "center", color: "var(--primary-text)" }}
                 >
                   Excluding gas fees.
                 </s.TextDescription>
@@ -278,7 +284,7 @@ function App() {
                     <s.TextDescription
                       style={{
                         textAlign: "center",
-                        color: "var(--accent-text)",
+                        color: "var(--primary-text)",
                       }}
                     >
                       Connect to the {CONFIG.NETWORK.NAME} network
@@ -373,7 +379,10 @@ function App() {
             <StyledImg
               alt={"example"}
               src={"/config/images/example.gif"}
-              style={{ transform: "scaleX(-1)" }}
+              style={{
+                transform: "scaleX(-1)",
+                boxShadow: "-8px 8px 0 black",
+              }}
             />
           </s.Container>
         </ResponsiveWrapper>
